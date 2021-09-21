@@ -1,0 +1,38 @@
+<body *ngFor="let employeeLoop of employee">
+    <div class="content">
+        <div mat-dialog-content style="max-height: 90vh;">
+            <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+                <mat-card class="card-detail-employee">
+                    <mat-card-content>
+                        <div class="header">
+                            <div class="background-profile">
+                                <img src="../../../assets/Logo.svg">
+                            </div>
+                            <div class="photo-profile">
+                                <img src="{{employeeLoop.photo_profile}}">
+                            </div>
+                           
+                        </div>
+                        <div class="name">
+                            <h3>{{employeeLoop.first_name}} {{employeeLoop.last_name}}</h3>
+                        </div>
+                        <div class="contact">
+                            <h4>C O N T A C T</h4>
+                            <p>{{employeeLoop.phone}}</p>
+                            <p>{{employeeLoop.email}}</p>
+                        </div>
+                        <div class="company">
+                            <h4>C O M P A N Y</h4>
+                            <p>{{employeeLoop.organization}} as {{employeeLoop.designation}}</p>
+                            <p>Salary : {{employeeLoop.salary}}$</p>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <div class="button">
+                    <button  class="btn-back" mat-dialog-close>Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    

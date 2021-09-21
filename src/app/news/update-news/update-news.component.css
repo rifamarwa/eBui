@@ -1,0 +1,97 @@
+
+body{
+    background-color: #F8F8FF;
+    width:100%;
+    height:700px;
+}
+
+
+
+.content {
+    width: 100%;
+    height: fit-content;
+}
+
+label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    color: #0F123F;
+}
+
+input{
+    background: #EFF0F6;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    padding:10px;
+    height: 50px;
+    border:#EFF0F6;
+    color: #778192;
+}
+
+textarea{
+    background: #EFF0F6;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    padding:10px;
+    /* height: 50px; */
+    border:#EFF0F6;
+    color: #778192;
+}
+
+
+mat-card-title{
+    text-align: center;
+    margin-bottom:30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    display: inline-block;
+    color: #0F123F;
+}
+
+.mat-elevation-z4 {
+    padding:20px;
+    overflow: hidden;
+    width:100%;
+    background-color: white;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+} 
+
+img{
+    width:100%;
+    border-radius: 10px;
+}
+
+.button{
+    text-align: start;
+    margin-top: 30px;
+    margin-bottom:30px;
+}
+
+.button button{
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    border:white;
+    padding: 6px 20px;
+}
+
+.button .btn-back{
+    background-color: #FFFFFF;
+    color: #0F123F;
+    margin-right: 20px;
+}
+
+.button .btn-update{
+    background: linear-gradient(128.58deg, #0F123F 14.67%, #3A408F 86.8%);
+    color: white;
+}

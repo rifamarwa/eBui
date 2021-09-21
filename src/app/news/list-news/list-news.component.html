@@ -1,0 +1,145 @@
+<body>
+    <div class="title-explore">
+        <h3>Explore Channels</h3>
+    </div>
+    <div class ="channels">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="16.6%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-news">
+                    <div class = "channels-img"> 
+                        <img style="width: 140px;"src="../../../assets/news/metro-tv-channels.svg">
+                    </div>
+                    <mat-card-content>
+                        <h1 class="judul">Metro TV News</h1>
+                        <p class="jumlah">57.5K</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="16.6%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-news">
+                    <div class = "channels-img"> 
+                        <img style="width: 140px; " src="../../../assets/news/kompas-tv-channels.svg">
+                    </div>
+                    <mat-card-content>
+                        <h1 class="judul">Kompas TV</h1>
+                        <p class="jumlah">127.5K</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="16.6%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-news">
+                    <div class = "channels-img"> 
+                        <img src="../../../assets/news/inews-channels.svg">
+                    </div>
+                   
+                    <mat-card-content>
+                        <h1 class="judul">Inews</h1>
+                        <p class="jumlah">57.5K</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="16.6%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-news">
+                    <div class = "channels-img"> 
+                        <img src="../../../assets/news/tvone-channels.svg">
+                    </div>
+                   
+                    <mat-card-content>
+                        <h1 class="judul">TV One</h1>
+                        <p class="jumlah">17.4K</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="16.6%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-news">
+                    <div class = "channels-img"> 
+                        <img src="../../../assets/news/rcti-channels.svg">
+                    </div>
+                    
+                    <mat-card-content>
+                        <h1 class="judul">RCTI</h1>
+                        <p class="jumlah">17.4K</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="16.6%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-news">
+                    <div class = "channels-img"> 
+                        <img src="../../../assets/news/cnn-channels.svg">
+                    </div>
+                    
+                    <mat-card-content>
+                        <h1 class="judul">CNN Indonesia</h1>
+                        <p class="jumlah">17.4K</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div class="list-news">
+        <h3>List News</h3>
+        <div class="list-news-card">
+            <div fxLayout="row wrap" fxLayoutGap="16px grid">
+                <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="100%" 
+                    *ngFor="let caseNews of news | paginate: config; let idx=index ;">
+                    <mat-card class="mat-card-list-news">
+                        <div class="other-menu">
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                <img src="../../../assets/twitter/titiktiga.svg">
+                              </button>
+                              <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click) = "updateNews(caseNews.id, idx)">
+                                  <mat-icon>update</mat-icon>
+                                  <span>Update</span>
+                                </button>
+                                <button mat-menu-item (click) = "deleteTheNews(caseNews.id, idx)">
+                                  <mat-icon>delete</mat-icon>
+                                  <span>Delete</span>
+                                </button>
+                              </mat-menu>
+                        </div>
+                        <div class="news-image">
+                            <a (click) = "detailNews(caseNews.id, idx)"><img src="{{caseNews.link_image}}"></a>
+                        </div>
+                        <div class="news-content">
+                            <h2><a (click) = "detailNews(caseNews.id, idx)">{{caseNews.title_news}}</a></h2>
+                            <p>{{ (caseNews.content_text.length>100)? (caseNews.content_text | slice:0:100)+'..':(caseNews.content_text) }}</p>
+                        </div>
+                        <div class="news-below-content">
+                            <div class="media">
+                                <h5>{{caseNews.media_name}}</h5>
+                            </div>
+                            <div class="category">
+                                <h5>Sport</h5>
+                            </div>
+                            <div class="date">
+                                <h5>{{caseNews.date |  date: 'MMMM d, y'}}</h5>
+                            </div>
+                        </div>
+                        
+                  </mat-card>
+                </div>
+            </div>
+        </div>
+        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+            <div class="custom-pagination">
+                <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                  <span *ngIf="!p.isFirstPage()" (click)="p.previous()">
+                    < 
+                      </span> 
+                  </div> 
+                  <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                        <span (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">{{ page.label }}</span>
+                      <div *ngIf="p.getCurrent() === page.value">
+                        <span>{{ page.label }}</span>
+                      </div>
+                  </div>
+                  <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                    <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
+                  </div>
+              </div>
+          
+        </pagination-template>
+    </div>
+</body>
+

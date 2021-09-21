@@ -1,0 +1,70 @@
+<body>
+    <p class="items-per-page">{{config.itemsPerPage}} results</p>
+    <div class="employee-card">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" 
+            *ngFor="let employeeLoop of employee | paginate: config; let idx=index ">
+                <mat-card class="mat-elevation-z4">
+                    <div class="other-menu">
+                        
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                            <img src="../../../assets/employee/titiktiga.svg">
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click) = "updateEmployee(employeeLoop.id, idx)">
+                              <mat-icon>update</mat-icon>
+                              <span>Update</span>
+                            </button>
+                            <button mat-menu-item (click) = "deleteTheEmployee(employeeLoop.id, idx)">
+                              <mat-icon>delete</mat-icon>
+                              <span>Delete</span>
+                            </button>
+                          </mat-menu>
+                          
+                    </div>
+                    <div class="employee-profile">
+                        <div class="biar-bulet">
+                            <ng-container *ngIf="isImageNotNull; else elseTemplate">
+                                <img src="{{employeeLoop.photo_profile}}">
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <img src="../../../assets/noimage.svg">
+                            </ng-template>
+                        
+                        </div>
+                        <h1>{{employeeLoop.first_name}} {{employeeLoop.last_name}}</h1>
+                        <p>{{employeeLoop.email}}</p>
+                    </div>
+                        
+                    <div class="view-profile">
+                        <button (click) = "detailEmployee(employeeLoop.id, idx)">
+                            <p>View Profile</p>
+                        </button>
+                    </div>
+                
+               
+              </mat-card>
+            </div>
+        </div>
+      
+        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+            <div class="custom-pagination">
+                <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                  <span *ngIf="!p.isFirstPage()" (click)="p.previous()">
+                    < 
+                      </span> 
+                  </div> 
+                  <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                        <span (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">{{ page.label }}</span>
+                      <div *ngIf="p.getCurrent() === page.value">
+                        <span>{{ page.label }}</span>
+                      </div>
+                  </div>
+                  <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                    <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
+                  </div>
+              </div>
+          
+        </pagination-template>
+    </div>
+</body>

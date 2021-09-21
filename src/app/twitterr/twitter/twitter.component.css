@@ -1,0 +1,92 @@
+body{
+    background-color: #F8F8FF;
+}
+
+.header{
+    display:inline-block;
+}
+
+.header h1{
+    display:inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 34px 30px 0px;
+    color: #0F123F;
+}
+
+.header img{
+    display:inline-block;
+}
+
+.search{
+    position: absolute;
+    right:300px;
+    top: 30px;
+    width:30px;
+}
+
+.notification{
+    position: absolute;
+    right: 250px;
+    top:30px;
+    width:30px;
+}
+
+.divider{
+    position: absolute;
+    right: 210px;
+    top:25px;
+    /* width:10px; */
+}
+
+.header h2{
+    display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    position: absolute;
+    right: 100px;
+    top:35px;
+    letter-spacing: 0.4px;
+    color: #252733;
+}
+
+.profile {
+    position: absolute;
+    right: 40px;
+    top:24px;
+}
+
+.add-twitter{
+    height: 100px;
+}
+
+
+.btn-add-twitter{
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 14px;
+
+    position: absolute;
+    width: 88px;
+    height: 32px;
+    right:40px;
+    top: 100px;
+    width:100px;
+    border: #FF6968;
+    text-align: center;
+    background: linear-gradient(90deg, #FF6968 0%, #FFA3A3 100%);
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* identical to box height, or 154% */
+
+
+    color: #FFFFFF;
+}

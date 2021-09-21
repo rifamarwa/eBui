@@ -1,0 +1,74 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
+
+@Component({
+  selector: 'app-add-news',
+  templateUrl: './add-news.component.html',
+  styleUrls: ['./add-news.component.css']
+})
+export class AddNewsComponent implements OnInit {
+
+  news:any=[];
+  submitted = false;
+  options: FormGroup;
+  categories = new FormControl;
+  imageError: string='';
+  isImageSaved: boolean=false;
+  cardImageBase64: string='';
+  url = ''
+
+  constructor(
+    private api:ApiService, fb: FormBuilder
+  ) { 
+    this.options = fb.group({
+      categories: this.categories
+    });
+  }
+
+  ngOnInit(): void {
+    
+    
+  }
+
+  saveData():void{
+
+    const data = {
+      id: this.news.id,
+      title_news: this.news.title_news,
+      media_name: this.news.media_name,
+      date: this.news.date,
+      content_text:this.news.content_text,
+      link_image:this.news.link_image
+    };
+  
+    this.api.createData('news', data).subscribe(result=>{
+      this.news=result;
+      this.submitted = true;
+    })
+  }
+  
+  onSubmit(){
+    this.submitted = true;
+    // this.save();
+  }
+
+  fileChange(event:any){
+    if(event.target.files){
+      // this.news.link_image = event.target.files[0];
+      var reader = new FileReader()
+       reader.readAsDataURL(event.target.files[0])
+      reader.onload = (event:any) => {
+        this.news.link_image = event.target.result
+      }
+      this.isImageSaved = true;
+      // reader.readAsDataURL(this.news.link_image);
+    }
+  }
+
+  // removeImage(){
+  //   this.cardImageBase64 = '';
+  //   this.isImageSaved = false;
+  // }
+
+}

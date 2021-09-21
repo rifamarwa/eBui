@@ -1,0 +1,144 @@
+body{
+    width:100%;
+    background-color: #F8F8FF;
+    height: 620px;
+}
+
+body img{
+    padding:0;
+    width:50%;
+}
+
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    
+    color: #0F123F;
+}
+
+input{
+    background: #EFF0F6;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    padding:10px;
+    height: 50px;
+    border:#EFF0F6;
+    color: #778192;
+}
+
+textarea{
+    background: #EFF0F6;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    padding:10px;
+    height: 50px;
+    border:#EFF0F6;
+    color: #778192;
+}
+
+mat-card-title{
+    text-align: center;
+    margin-bottom:50px;
+    font-weight: bold;
+    color: #0F123F;
+
+}
+
+.card-update-employee {
+   
+    padding:20px;
+    overflow: hidden;
+    width:935px;
+    color:black;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+} 
+
+.image-wrap {
+    padding: 10px;
+    border: solid 1px #e0e0e0;
+    display: inline-block;
+}
+
+.img-space {
+    border: 1px dashed #BABEC6;
+    border-radius: 200px;
+    width:fit-content;
+    height: fit-content;
+    margin: 10px auto 10px;
+    padding: 5px;
+    /* padding-top: 30px;
+    padding-bottom:30px; */
+}
+
+.img-space img {
+    display: block;
+    width: 170px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 200px;
+}
+
+.fileInputProfileWrap {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.fileInputProfileWrap p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    color: #0F123F;
+}
+
+.fileInputProfile {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    opacity: 0;
+}
+.fileInputProfile[disabled] + .img-space{
+    pointer-events: none;
+    cursor: not-allowed!important;
+}
+
+.button{
+    text-align: end;
+    margin-top: 30px;
+}
+
+.button button{
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    border:white;
+    padding: 6px 20px;
+}
+
+.button .btn-back{
+    background-color: #FFFFFF;
+    color: #0F123F;
+    margin-right: 20px;
+}
+
+.button .btn-update{
+    background: linear-gradient(128.58deg, #0F123F 14.67%, #3A408F 86.8%);
+    color: white;
+}

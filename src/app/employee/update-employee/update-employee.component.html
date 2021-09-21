@@ -1,0 +1,83 @@
+<body *ngFor="let employeeLoop of employee">
+    <div class="content">
+        <div mat-dialog-content style="max-height: 90vh;">
+            <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="33%">
+                <mat-card class="card-update-employee">
+                    <mat-card-content>
+                        <mat-card-title>Update {{employeeLoop.first_name}}'s Data</mat-card-title>
+                        <div fxLayout="row wrap" fxLayoutGap="10px grid">
+                            <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="100%">
+                                <div fxLayout="row wrap" fxLayoutGap="20px grid">
+                                    <div fxFlex="50%" fxFlex.xs="50%" fxFlex.sm="50%">
+                                        <div class="form-group">
+                                            <label for="First Name">First Name</label>
+                                            <input type="text" [(ngModel)]="employeeLoop.first_name" class="form-control" id="first_name" name="first_name" placeholder="Masukkan judul berita disini">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Email">Email</label>
+                                            <input type="email" [(ngModel)]="employeeLoop.email" class="form-control" id="tanggal" name="tanggal">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="organization">Organization</label>
+                                            <input type="text" [(ngModel)]="employeeLoop.organization"class="form-control" id="organization" name="organization" placeholder="Masukkan link organization disini">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="salary">Salary</label>
+                                            <input type="number" [(ngModel)]="employeeLoop.salary"class="form-control" id="salary" name="salary" placeholder="Masukkan link salary disini">
+                                        </div><br>
+                                    </div>
+                                    <div fxFlex="50%" fxFlex.xs="50%" fxFlex.sm="50%">
+                                        <div class="form-group">
+                                            <label for="Last Name">Last Name</label>
+                                            <input type="text"  [(ngModel)]="employeeLoop.last_name" class="form-control" id="last_name" name="last_name" placeholder="Masukkan media berita disini">
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <label for="phone">Phone</label>
+                                            <input type="number" [(ngModel)]="employeeLoop.phone" class="form-control" id="phone" name="phone" placeholder="Masukkan konten berita disini">
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <label for="designation">Designation</label>
+                                            <input type="text" [(ngModel)]="employeeLoop.designation"class="form-control" id="designation" name="designation" placeholder="Masukkan link designation disini">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="100%">
+                                <form>
+                                    
+                                    <div class="form-group">
+                                        <fieldset class="form-group">
+                                            <div class="custom-file fileInputProfileWrap">
+                                                <p>Photo Profile</p>
+                                                <input type="file" [(ngModel)]="employeeLoop.photo_profile" (change)="fileChange($event)" class="fileInputProfile" id="photo">
+                                                <div class="img-space">
+                        
+                                                    <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                                        <img src="{{employee.photo_profile}}" />
+                                                    </ng-container>
+                                                    <ng-template #elseTemplate>
+                                                        <img src="{{employeeLoop.photo_profile}}" class="img-responsive">
+                                                        <!-- <img src="../../../assets/noimage.svg" class="img-responsive"> -->
+                                                    </ng-template>
+                            
+                                                </div>
+                            
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <div class="button">
+                    <button  class="btn-back" mat-dialog-close>Back</button>
+                    <button  class="btn-update" (click) = "updateEmployee(employeeLoop.id, employeeLoop)">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    

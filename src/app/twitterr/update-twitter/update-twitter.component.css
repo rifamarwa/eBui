@@ -1,0 +1,219 @@
+
+body{
+    background-color: #F8F8FF;
+    /* position:relative; */
+    width: 100%;
+    height: 100%;
+}
+
+
+.content {
+    /* padding: 10px; */
+    width:100%;
+}
+
+mat-card-title{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom:10px;
+    font-weight: bold;
+    color: #0F123F;
+}
+
+.mat-elevation-z4 {
+    /* position: absolute; */
+    color: black;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    height: fit-content;
+    scrollbar-gutter: 8dp;
+    background-color: white;
+    width:800px;
+} 
+
+
+.header-card{
+    height: fit-content;
+   
+}
+
+.photo-profile{
+    width:100%;
+    margin-top:20px;
+    text-align: center;
+}
+
+.header-card .photo-profile img{
+
+   border-radius: 60px;
+    width:90px;
+    margin-top:0px;
+    
+}
+
+
+.header-card .other-menu img{
+    width:fit-content;
+}
+
+.twitter-profile{
+    width:100%;
+    margin-top:20px;
+    text-align: center;
+}
+
+/* .twitter-profile h1{
+    margin-top:10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: #0F123F;
+} */
+
+label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    color: #0F123F;
+}
+
+input{
+    background: #EFF0F6;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    padding:10px;
+    height: 30px;
+    border:#EFF0F6;
+    color: #778192;
+}
+
+textarea{
+    background: #EFF0F6;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    padding:10px;
+    border:#EFF0F6;
+    color: #778192;
+}
+
+.twitter-profile span, p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    color: #778192;
+}
+
+.twitter-post{
+    padding:0px 20px 0px;
+}
+
+.twitter-post p{
+    
+    /* height: 20px; */
+    margin-top:12px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0F123F;
+}
+
+.twitter-post .form-group textarea{
+    margin-top:20px;
+    background: #EFF0F6;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    padding:10px;
+    /* height: 50px; */
+    border:#EFF0F6;
+    color: #778192;
+}
+
+.twitter-image{
+
+    padding:5px 10px 20px;
+    text-align: center;
+}
+
+.twitter-image img{
+    border-radius: 10px;
+    width:95%;
+    text-align: center;
+}
+
+.button{
+    text-align: start;
+    margin-top: 30px;
+}
+
+.button button{
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    border:white;
+    padding: 6px 20px;
+}
+
+.button .btn-back{
+    background-color: #FFFFFF;
+    color: #0F123F;
+    margin-right: 20px;
+}
+
+.button .btn-update{
+    background: linear-gradient(128.58deg, #0F123F 14.67%, #3A408F 86.8%);
+    color: white;
+}
+
+.image-wrap {
+    padding: 10px;
+    border: solid 1px #e0e0e0;
+    display: inline-block;
+}
+
+.img-space {
+    border: 1px dashed #BABEC6;
+    border-radius: 10px;
+    width:fit-content;
+    height: fit-content;
+    margin: 10px auto 10px;
+    padding: 5px;
+    /* padding-top: 30px;
+    padding-bottom:30px; */
+}
+
+.img-space img {
+    display: block;
+    width: 170px;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.fileInputProfileWrap {
+    width: 100%;
+    height: auto;
+}
+
+.fileInputProfile {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    opacity: 0;
+}
+.fileInputProfile[disabled] + .img-space{
+    pointer-events: none;
+    cursor: not-allowed!important;
+}

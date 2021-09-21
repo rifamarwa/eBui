@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+mat-nav-list img{
+    text-align: center;
+    padding: 0px;
+    margin: 15px 30px 40px;
+    width: 97px;
+    height: 40px;
+
+}
+
+.example-container {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+  }
+
+mat-drawer{
+    width:fit-content;
+    background-color: #0F123F;
+}
+
+mat-nav-list{
+    margin-top:20px;
+}
+
+h3{
+    color:white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 19px;
+}
+
+mat-nav-list mat-icon{
+    color:white;
+   
+}
+
+mat-nav-list .settings{
+    margin-top:180px;
+}
+
+.list :hover{
+    background:linear-gradient(#FF6968 0%,#FFA3A3 100%);
+    transition: 0s;
+    border-radius: 10px
+}
+
+.settings :hover{
+    background:linear-gradient(#FF6968 0%,#FFA3A3 100%);
+    transition: 0s;
+    border-radius: 10px
+}
+
+
+mat-drawer-content{
+    background-color: #F8F8FF;
+}
+
+mat-list-item.active{
+    background:linear-gradient(90deg, #FF6968 0%, #FFA3A3 100%);
+    box-shadow: 0px 20px 55px rgba(238, 120, 108, 0.25);
+    border-radius: 10px;
+}

@@ -1,0 +1,157 @@
+body{
+    background-color: #F8F8FF;
+}
+
+.twitter-card {
+    padding: 30px 45px 30px;
+    display:inline-block;
+    width:100%;
+}
+
+mat-card{
+    padding:0px;
+}
+
+.mat-elevation-z4 {
+    overflow:hidden;
+    margin-bottom:20px;
+    padding-bottom:0px;
+    color: #0F123F;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    height: fit-content;
+    scrollbar-gutter: 8dp;
+    background-color: white;
+}
+
+.header-card{
+    height: 100px;
+   
+}
+
+.photo-profile{
+    width:fit-content;
+    margin-top:20px;
+    margin-left:20px;
+    border-radius: 10px;
+}
+
+.photo-profile img{
+    border-radius: 40px;
+}
+
+.header-card .photo-profile img{
+
+    text-align: left;
+    width:60px;
+    margin-top:0px;
+    
+}
+
+
+.header-card .other-menu img{
+    width:fit-content;
+}
+
+.twitter-profile{
+    width:150px;
+    margin-top:20px;
+    margin-left:5px;
+}
+
+.twitter-profile h1{
+    margin-top:10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: #0F123F;
+}
+
+.twitter-profile span, p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    color: #778192;
+}
+
+.other-menu{
+    margin-bottom:50px;
+    margin-top:12px;
+    text-align: right;
+}
+
+.other-menu img{
+    text-align: right;
+    width:32px;
+}
+
+.twitter-post{
+    padding:0px 20px 0px;
+}
+
+.twitter-post p{
+    
+    /* height: 20px; */
+    margin-top:12px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0F123F;
+}
+
+.twitter-image{
+
+    padding:5px 10px 20px;
+    text-align: center;
+}
+
+.twitter-image img{
+    border-radius: 10px;
+    width:220px;
+    text-align: center;
+}
+
+
+
+/*********Pagination*********/
+
+.custom-pagination{
+    margin-top:30px;
+    margin-bottom:30px;
+    margin-right:17px;
+    height: 100px;
+    text-align: right;
+}
+
+.custom-pagination .page-number{
+    display: inline-block;
+    /* padding: 5px 12px; */
+    background: #FFFFFF;
+    margin: 0px 4px;
+    width:32px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+.page-number.current{
+    background: linear-gradient(128.58deg, #0F123F 14.67%, #3A408F 86.8%)!important;
+    color:white;
+}
+
+.page-number span{
+    display: block;
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top:5px;
+}
+
+.pagination-previous,.pagination-next{
+    display: inline-block;
+    font-weight: bold;
+}

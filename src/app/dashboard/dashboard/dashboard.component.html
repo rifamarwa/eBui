@@ -1,0 +1,179 @@
+
+<body>
+    <div class="header">
+        <h1>Dashboard</h1>
+        <img class = "search" src = "../../../assets/dashboard/search.svg">
+        <img class ="notification" src = "../../../assets/dashboard/notification.svg">
+        <img class = "divider"  src = "../../../assets/dashboard/divider.svg">
+        <h2>Samantha</h2>
+        <img class = "profile" src = "../../../assets/dashboard/profile.svg">
+    </div>
+    <div class="avg-card">
+        <div fxLayout="row wrap" fxLayoutGap="50px grid"  >
+            <div fxFlex="23%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-avg" style="margin-right:30px;">
+                    <img src="../../../assets/dashboard/avg-impression.svg">
+                    <mat-card-content>
+                        <h1 class="judul">Avg Impression</h1>
+                        <p class="angka">2.480</p>
+                        <p class="persen">+10.80%</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="23%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-avg">
+                    <img src="../../../assets/dashboard/avg-engagements.svg">
+                    <mat-card-content>
+                        <h1 class="judul">Avg Engagements</h1>
+                        <p class="angka">10.290</p>
+                        <p class="persen">+05.80%</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="23%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-avg">
+                    <img src="../../../assets/dashboard/avg-reach.svg">
+                    <mat-card-content style="margin-left:110px">
+                        <h1 class="judul">Avg Reach</h1>
+                        <p class="angka">4.215</p>
+                        <p class="persen" style="color:red">-10.80%</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div fxFlex="23%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-avg">
+                    <img src="../../../assets/dashboard/news-growth.svg">
+                    <mat-card-content>
+                        <h1 class="judul">News Growth</h1>
+                        <p class="angka">230</p>
+                        <p class="persen">+10.80%</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+            <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="100%">
+                <mat-card class="mat-card-barcharts">
+                    <div class="columnchart" style="display:inline-block">
+                        <highcharts-chart style="display:inline-block" [Highcharts]="Highcharts" [options]="chartOptionsColumn"></highcharts-chart>
+                        <p>Day</p>
+                    </div>
+                    <div class="chartdetails" style="display:inline-block; position:absolute;right: 30px; top:30px; padding-bottom:10px">
+                        <h2>Chart Details</h2>
+                        <div class="test1">
+                            <img style="display: inline-block" src="../../../assets/dashboard/eclipse-test1.svg">
+                            <p style="display: inline-block; margin-left:20px;">Test 1</p>
+                            <p style="display: inline-block;  margin-left:60px;">1 800 550</p>
+                        </div>
+                        <div class="test2">
+                            <img style="display: inline-block" src="../../../assets/dashboard/eclipse-test2.svg">
+                            <p style="display: inline-block; margin-left:20px;">Test 2</p>
+                            <p style="display: inline-block;  margin-left:60px;">1 500 311</p>
+                        </div>
+                        <div class="test3">
+                            <img style="display: inline-block" src="../../../assets/dashboard/eclipse-test3.svg">
+                            <p style="display: inline-block; margin-left:20px;">Test 3</p>
+                            <p style="display: inline-block;  margin-left:60px;">1 100 625</p>
+                        </div>
+                        <div class="test4">
+                            <img style="display: inline-block" src="../../../assets/dashboard/eclipse-test4.svg">
+                            <p style="display: inline-block; margin-left:20px;">Test 4</p>
+                            <p style="display: inline-block;  margin-left:60px;">300 845</p>
+                        </div>
+                    </div>
+                
+                </mat-card>
+            </div>
+            <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-doughnutcharts">
+                    <h2>Media Share</h2>
+                    <div style="display: block" class="doughnutchart">
+                        <canvas mdbChart
+                            [chartType]="chartType"
+                            [datasets]="chartDatasets"
+                            [options]="chartOptions"
+                            [colors]="chartColors"
+                            [labels]="chartLabels"
+                            [legend]="true">
+                        </canvas>
+                        </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="last-news">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid" style="padding:20px">
+            <div fxFlex="70%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-lastnews">
+                    <h2>News Uploaded</h2>
+                    <table class="table" id="news-table">
+                        <thead style="background-color: #FAFAFA;">
+                            <tr>
+                            <th scope="col" colspan ="2">News</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Views</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let newsLoop of news | paginate: config">
+                                <td><img style="width:50px;height:30px" src="{{newsLoop.link_image}}"></td>
+                                <td>{{newsLoop.title_news}}</td>
+                                <td>{{newsLoop.date |  date: 'MMMM d, y'}}</td>
+                                <td>{{newsLoop.media_name}}</td>
+                                <td>12.320</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+                        <div class="custom-pagination">
+                            <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                                <span *ngIf="!p.isFirstPage()" (click)="p.previous()">
+                                < 
+                                    </span> 
+                                </div> 
+                                <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                                    <span (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">{{ page.label }}</span>
+                                    <div *ngIf="p.getCurrent() === page.value">
+                                    <span>{{ page.label }}</span>
+                                    </div>
+                                </div>
+                                <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                                <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
+                                </div>
+                            </div>
+                    </pagination-template>
+                </mat-card>
+            </div>
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <mat-card class="mat-card-topic">
+                    <h2>My Topic</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Koruptor</td>
+                                <td><img src="../../../assets/dashboard/topics.svg"></td>
+                            </tr>
+                            <tr>
+                                <td>Bansos</td>
+                                <td><img src="../../../assets/dashboard/topics.svg"></td>
+                            </tr>
+                            <tr>
+                                <td>FSBI</td>
+                                <td><img src="../../../assets/dashboard/topics.svg"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</body>
+    

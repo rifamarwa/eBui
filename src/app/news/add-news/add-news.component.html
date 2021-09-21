@@ -1,0 +1,107 @@
+<body>
+    <div class="content">
+        <div class ="header">
+            <h3>Add News Content</h3>
+            <div class="btn">
+                <button class="btn-publish" (click) = "saveData()">Publish</button>
+                <button class="btn-cancel" >Cancel</button>
+            </div>
+        </div>
+        <div class="add-data">
+            <div fxLayout="row wrap" fxLayoutGap="10px grid">
+                <div fxFlex="60%" fxFlex.xs="60%" fxFlex.sm="60%">
+                    <div class="form">
+                        <mat-card class="card-form">
+                            <form (ngSubmit)="onSubmit()">
+                                <mat-card-content>
+                                    <div class="form-group">
+                                        <label for="judul">Title</label>
+                                        <input type="text" [(ngModel)]="news.title_news" class="form-control" id="judul" name="judul" placeholder="Enter News Title">
+                                    </div><br>
+                                    <div class="form-group">
+                                        <label for="tanggal">Date</label>
+                                        <input type="date" [(ngModel)]="news.date" class="form-control" id="tanggal" name="tanggal">
+                                    </div><br>
+                                    <div class="form-group">
+                                        <label for="konten">Content</label>
+                                        <textarea rows="29" [(ngModel)]="news.content_text" class="form-control" id="konten" name="konten" placeholder="Enter News Content"></textarea>
+                                    </div><br>
+                                </mat-card-content>
+                            </form>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="40%" fxFlex.xs="40%" fxFlex.sm="40%">
+                    <div class="other-data">
+                        <mat-card class="card-channels">
+                            <h2>Channels</h2>
+                            <form>
+                                <div class="form-check">
+                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="Metro TV" type="radio" name="flexRadioDefault" 
+                                    id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1"> Metro TV</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="Kompas" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1"> Kompas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="CNN" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1"> CNN</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="TV One" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1"> TV One</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="RCTI" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1"> RCTI</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="iNews" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1"> INEWS</label>
+                                </div>
+                            </form>
+                        </mat-card>
+                        <mat-card class="card-categories">
+                            <h2>Categories</h2>
+                            <form [formGroup]="options">
+                                <mat-checkbox [formControl] = "categories">Bussiness</mat-checkbox><br>
+                                <mat-checkbox [formControl] = "categories">Education</mat-checkbox><br>
+                                <mat-checkbox [formControl] = "categories">Sport</mat-checkbox><br>
+                                <mat-checkbox [formControl] = "categories">Lifestyle</mat-checkbox><br>
+                                <mat-checkbox [formControl] = "categories">Politcs</mat-checkbox><br>
+                                <mat-checkbox [formControl] = "categories">Bussiness</mat-checkbox><br>
+                            </form>
+                        </mat-card>
+                        <mat-card class="card-picture">
+                            <h2>Photo</h2>
+                                
+                            <form>
+                                <div class="form-group">
+                                    <fieldset class="form-group">
+                                        <div class="custom-file fileInputProfileWrap">
+                                            <input type="file" (change)="fileChange($event)" class="fileInputProfile">
+                                            <div class="img-space">
+                        
+                                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                                    <img src="{{news.link_image}}" />
+                                                </ng-container>
+                                                <ng-template #elseTemplate>
+                                                    <img src="../../../assets/news/upload-file.svg" class="img-responsive">
+                                                </ng-template>
+                        
+                                            </div>
+                        
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </form>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>

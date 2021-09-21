@@ -1,0 +1,349 @@
+body{
+    background-color: #F8F8FF;
+}
+
+.header{
+    display:inline-block;
+}
+
+.header h1{
+    display:inline-block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 34px 30px 0px;
+    color: #0F123F;
+}
+
+.header img{
+    display:inline-block;
+}
+
+.search{
+    position: absolute;
+    right:300px;
+    top: 30px;
+    width:30px;
+}
+
+.notification{
+    position: absolute;
+    right: 250px;
+    top:30px;
+    width:30px;
+}
+
+.divider{
+    position: absolute;
+    right: 210px;
+    top:25px;
+    /* width:10px; */
+}
+
+.header h2{
+    display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    position: absolute;
+    right: 100px;
+    top:35px;
+    letter-spacing: 0.4px;
+    color: #252733;
+}
+
+.profile {
+    position: absolute;
+    right: 40px;
+    top:24px;
+}
+
+.avg-card {
+    /* padding: 30px 10px 30px; */
+    margin:30px 20px 30px;
+    display:inline-block;
+    height:fit-content;
+    width:100%;
+}
+
+
+.mat-card-avg {
+    
+    overflow:hidden;
+    padding-right:30px;
+    margin-bottom:5px;
+    color:black;
+    width: 270px;
+    height: 155px;
+    max-width: 100ch;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.mat-card-avg img{
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 40px;
+    top: 50px;
+}
+
+mat-card-content{
+    font-family: Roboto;
+    padding: 20px 0px 20px 20px;
+    display: inline-block;
+    position: absolute;
+    right:40px;
+    text-align: right;
+}
+
+mat-card-content .judul{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #778192;
+}
+
+mat-card-content .angka{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 0.02em;
+    color: #0F123F;
+}
+
+mat-card-content .persen{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #45D0AA;
+}
+
+.charts{
+    margin:0px 20px 0px;
+    display:inline-block;
+    width:100%;
+    height:fit-content;
+}
+
+
+
+.mat-card-barcharts{
+    overflow:hidden;
+    margin-right:300px;
+    color:black;
+    width: 760px;
+    height: 380px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+}
+
+
+
+.test1 p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    color: #0F123F;
+    text-align:right;
+}
+
+.test2 p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #0F123F;
+    opacity: 0.5;
+    text-align:right;
+}
+
+.test3 p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #0F123F;
+    opacity: 0.5;
+    text-align:right;
+}
+
+.test4 p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    color: #0F123F;
+    text-align:right;
+}
+
+.mat-card-doughnutcharts{
+    overflow:hidden;
+    margin: 0px 30px 5px 30px;
+    background-color: red;
+    color:black;
+    width: 340px;
+    height: 380px;
+    position:absolute;
+    left: 770px;
+    max-width: 100ch;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.mat-card-doughnutcharts h2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-left:10px;
+    display: flex;
+    align-items: center;
+
+    color: #0F123F;
+}
+
+.doughnutchart{
+    width:250px;
+    margin: 0 auto 0;
+
+}
+
+.doughnutchart [labels]{
+    border-radius: 10px;
+}
+
+
+.mat-card-lastnews{
+    overflow:hidden;
+    color:black;
+    width: 760px;
+    height: 400px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+}
+
+.mat-card-lastnews h2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #0F123F;
+
+}
+
+.mat-card-topic{
+    overflow:hidden;
+    margin-bottom:5px;
+    color: #0F123F;
+    width: 340px;
+    height: fit-content;
+    position:absolute;
+    left: 800px;
+    max-width: 100ch;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 70px rgba(86, 89, 146, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 16px, 20px, 16px;
+    border:white;
+}
+
+.table-striped img{
+    margin:10px 5px 10px 150px;
+
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+	.table-striped>tbody>tr:nth-child(odd)>th {
+		background-color: #FAFAFA; 
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        color: #414C5F;
+        padding-top:14px;
+        padding-bottom:14px;
+        border:white;
+
+	}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th img{
+    background-color: #FAFAFA; 
+}
+
+	.table-striped>tbody>tr:nth-child(even)>td, 
+	.table-striped>tbody>tr:nth-child(even)>th {
+		background-color: white;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        color: #414C5F;
+        padding-top:14px;
+        padding-bottom:14px; 
+        border:white
+	}
+
+    .custom-pagination{
+        margin-top:30px;
+        margin-bottom:30px;
+        margin-right:17px;
+        height: 100px;
+        text-align: right;
+    }
+    
+    .custom-pagination .page-number{
+        display: inline-block;
+        /* padding: 5px 12px; */
+        background: #FFFFFF;
+        margin: 0px 4px;
+        width:32px;
+        height: 32px;
+        border-radius: 5px;
+    }
+    
+    .page-number.current{
+        background: linear-gradient(128.58deg, #0F123F 14.67%, #3A408F 86.8%)!important;
+        color:white;
+    }
+    
+    .page-number span{
+        display: block;
+        text-align: center;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top:5px;
+    }
+    
+    .pagination-previous,.pagination-next{
+        display: inline-block;
+        font-weight: bold;
+    }

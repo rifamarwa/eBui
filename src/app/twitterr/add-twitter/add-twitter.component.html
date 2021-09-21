@@ -1,0 +1,92 @@
+<body>
+    <div class="content">
+        <div class ="header">
+            <h3>Post something in Twitter</h3>
+            <div class="btn">
+                <button class="btn-publish" (click) = "saveData()">Publish</button>
+                <button class="btn-cancel" >Cancel</button>
+            </div>
+        </div>
+        
+        <div class="add-data">
+            <div fxLayout="row wrap" fxLayoutGap="10px grid">
+                <div fxFlex="60%" fxFlex.xs="100%" fxFlex.sm="100%">
+                    <div class="form">
+                        <mat-card class="card-form">
+                            <form (ngSubmit)="onSubmit()">
+                                <mat-card-content>
+                                    <div class="form-group">
+                                        <label for="First Name">Name</label>
+                                        <input type="text" [(ngModel)]="tweet.name" class="form-control" id="name" name="name" placeholder="Enter your name here">
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label for="Last Name">Username</label>
+                                        <input type="text"  [(ngModel)]="tweet.username" class="form-control" id="username" name="username" placeholder="Enter your username here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Email">Date</label>
+                                        <input type="date" [(ngModel)]="tweet.date" class="form-control" id="tanggal" name="tanggal">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Content</label>
+                                        <textarea  rows="5" [(ngModel)]="tweet.text" class="form-control" id="text" name="text" placeholder="What's happening?"></textarea>
+                                    </div>
+                                </mat-card-content>
+                            </form>
+                        </mat-card>
+                    </div>
+                </div>
+                <div fxFlex="40%" fxFlex.xs="100%" fxFlex.sm="100%">
+                    <mat-card class="profile-picture">
+                        <h2>Profile Pictures</h2>
+                        <form>
+                            <div class="form-group">
+                                <fieldset class="form-group">
+                                    <div class="custom-file fileInputProfileWrap">
+                                        <input type="file" (change)="filePhotoProfileChange($event)" class="fileInputProfile">
+                                        <div class="img-space">
+                    
+                                            <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                                <img src="{{tweet.profile_image}}" />
+                                            </ng-container>
+                                            <ng-template #elseTemplate>
+                                                <img src="../../../assets/news/upload-file.svg" class="img-responsive">
+                                            </ng-template>
+                    
+                                        </div>
+                    
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </mat-card>
+                    <mat-card class="card-picture">
+                        <h2>Pictures</h2>
+                        <form>
+                            <div class="form-group">
+                                <fieldset class="form-group">
+                                    <div class="custom-file fileInputProfileWrap">
+                                        <input type="file" (change)="fileTweetImageChange($event)" class="fileInputProfile">
+                                        <div class="img-space">
+                    
+                                            <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                                <img src="{{tweet.image}}" />
+                                            </ng-container>
+                                            <ng-template #elseTemplate>
+                                                <img src="../../../assets/news/upload-file.svg" class="img-responsive">
+                                            </ng-template>
+                    
+                                        </div>
+                    
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
