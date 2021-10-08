@@ -2,6 +2,25 @@ body{
     background-color: #F8F8FF;
 }
 
+.input-box{
+    align-items:justify;
+    width: 100%;
+    margin-left:45px;
+}
+
+input{
+    width:400px;
+   
+    text-align: center;
+}
+
+.search{
+    position: absolute;
+    right:300px;
+    top: 30px;
+    width:30px;
+}
+
 .items-per-page{
     font-style: normal;
     font-weight: 500;

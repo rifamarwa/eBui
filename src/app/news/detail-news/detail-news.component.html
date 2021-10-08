@@ -1,25 +1,25 @@
-<body *ngFor="let newsLoop of news">
+<body>
     <div class="content">
         <div mat-dialog-content style="max-height: 120vh;">
             <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
-                <img src="{{newsLoop.link_image}}"><br>
+                <img src="{{newss.link_image}}"><br>
                 <mat-card class="card-detail-news">
                     <mat-card-content>
                         <div class="title">
-                            <h4>{{newsLoop.title_news}}</h4>
+                            <h4>{{newss.title_news}}</h4>
                         </div>
                         <div class="media-and-date">
                             <div fxLayout="row wrap" fxLayoutGap="16px grid">
                                 <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
-                                    <p>{{newsLoop.media_name}}</p>
+                                    <p>{{newss.media_name}}</p>
                                 </div>
                                 <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
-                                    <p style="text-align: end;">{{newsLoop.date |  date: 'MMMM d, y'}}</p>
+                                    <p style="text-align: end;">{{newss.date |  date: 'MMMM d, y'}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="content-text">
-                            <p>{{newsLoop.content_text}}</p>
+                            <p>{{newss.content_text}}</p>
                         </div>
                     </mat-card-content>
                 </mat-card>

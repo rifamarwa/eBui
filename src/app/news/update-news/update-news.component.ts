@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class UpdateNewsComponent implements OnInit {
 
-  news:any=[];
+  newss:any=[];
   constructor(
     public api:ApiService,
     public dialogRef:MatDialogRef<UpdateNewsComponent>,
@@ -23,8 +23,8 @@ export class UpdateNewsComponent implements OnInit {
 
   getSingleNews()
   {
-      this.api.getSingleData('news', this.data.id).subscribe(result=>{
-      this.news = result;
+      this.api.getSingleDataS('news', this.data.id).subscribe(result=>{
+      this.newss = result;
       console.log(result);
       
     })
@@ -32,16 +32,16 @@ export class UpdateNewsComponent implements OnInit {
 
   getAllNews(){
     this.api.getData('news').subscribe(result=>{
-      this.news = result;
+      this.newss = result;
     })
   }
 
   updateNews(id:number, data:any){
-    this.api.updateData('news', id, data).subscribe(result=>{
+    this.api.updateDataS('news', id, data).subscribe(result=>{
       
       console.log(result);
       this.dialogRef.close(result);
-      this.news = this.getAllNews();
+   //   this.newss = this.getAllNews();
       this.reloadCurrentRoute();
      
       // this.news = result;

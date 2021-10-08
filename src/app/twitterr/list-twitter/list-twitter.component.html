@@ -2,7 +2,7 @@
     <div class="twitter-card">
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" 
-            *ngFor="let twitterLoop of twitter | paginate: config; let idx=index ;">
+            *ngFor="let twitterLoop of twitters | paginate: config; let idx=index ;">
                 <mat-card class="mat-elevation-z4">
                     <div class="header-card">
                         <div fxLayout="row wrap" fxLayoutGap="5px grid">
@@ -46,8 +46,8 @@
               </mat-card>
             </div>
         </div>
-      
-        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+        <pagination-template #p="paginationApi" [id]="config.id" 
+        (pageChange)= " onPageDataChange($event)">
             <div class="custom-pagination">
                 <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
                   <span *ngIf="!p.isFirstPage()" (click)="p.previous()">
@@ -66,5 +66,6 @@
               </div>
           
         </pagination-template>
+       
     </div>
 </body>

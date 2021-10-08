@@ -16,15 +16,15 @@
                                 <mat-card-content>
                                     <div class="form-group">
                                         <label for="judul">Title</label>
-                                        <input type="text" [(ngModel)]="news.title_news" class="form-control" id="judul" name="judul" placeholder="Enter News Title">
+                                        <input type="text" [(ngModel)]="newss.title_news" class="form-control" id="judul" name="judul" placeholder="Enter News Title">
                                     </div><br>
                                     <div class="form-group">
                                         <label for="tanggal">Date</label>
-                                        <input type="date" [(ngModel)]="news.date" class="form-control" id="tanggal" name="tanggal">
+                                        <input type="date" [(ngModel)]="newss.date" class="form-control" id="tanggal" name="tanggal">
                                     </div><br>
                                     <div class="form-group">
                                         <label for="konten">Content</label>
-                                        <textarea rows="29" [(ngModel)]="news.content_text" class="form-control" id="konten" name="konten" placeholder="Enter News Content"></textarea>
+                                        <textarea rows="29" [(ngModel)]="newss.content_text" class="form-control" id="konten" name="konten" placeholder="Enter News Content"></textarea>
                                     </div><br>
                                 </mat-card-content>
                             </form>
@@ -37,28 +37,28 @@
                             <h2>Channels</h2>
                             <form>
                                 <div class="form-check">
-                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="Metro TV" type="radio" name="flexRadioDefault" 
+                                    <input class="form-check-input"   [(ngModel)]="newss.media_name" value="Metro TV" type="radio" name="flexRadioDefault" 
                                     id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1"> Metro TV</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="Kompas" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input"   [(ngModel)]="newss.media_name" value="Kompas" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1"> Kompas</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="CNN" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input"   [(ngModel)]="newss.media_name" value="CNN" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1"> CNN</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="TV One" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input"   [(ngModel)]="newss.media_name" value="TV One" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1"> TV One</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="RCTI" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input"   [(ngModel)]="newss.media_name" value="RCTI" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1"> RCTI</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input"   [(ngModel)]="news.media_name" value="iNews" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input"   [(ngModel)]="newss.media_name" value="iNews" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1"> INEWS</label>
                                 </div>
                             </form>
@@ -85,7 +85,7 @@
                                             <div class="img-space">
                         
                                                 <ng-container *ngIf="isImageSaved; else elseTemplate">
-                                                    <img src="{{news.link_image}}" />
+                                                    <img src="{{newss.link_image}}" />
                                                 </ng-container>
                                                 <ng-template #elseTemplate>
                                                     <img src="../../../assets/news/upload-file.svg" class="img-responsive">

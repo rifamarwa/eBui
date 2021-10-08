@@ -10,6 +10,9 @@ import { ApiService } from 'src/app/api.service';
 export class DetailEmployeeComponent implements OnInit {
 
   employee:any=[];
+
+  employees:any=[];
+
   isImageSaved:boolean=false;
   constructor(
     public api:ApiService,
@@ -23,8 +26,8 @@ export class DetailEmployeeComponent implements OnInit {
 
   getSingleEmployee()
   {
-    this.api.getSingleData('employee', this.data.id).subscribe(result =>{
-      this.employee = result;
+    this.api.getSingleDataS('employee', this.data.id).subscribe(result =>{
+      this.employees = result;
       console.log(result);
     })
   }

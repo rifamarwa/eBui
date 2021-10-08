@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class AddNewsComponent implements OnInit {
 
-  news:any=[];
+  newss:any=[];
   submitted = false;
   options: FormGroup;
   categories = new FormControl;
@@ -34,16 +34,16 @@ export class AddNewsComponent implements OnInit {
   saveData():void{
 
     const data = {
-      id: this.news.id,
-      title_news: this.news.title_news,
-      media_name: this.news.media_name,
-      date: this.news.date,
-      content_text:this.news.content_text,
-      link_image:this.news.link_image
+      id: this.newss.id,
+      title_news: this.newss.title_news,
+      media_name: this.newss.media_name,
+      date: this.newss.date,
+      content_text:this.newss.content_text,
+      link_image:this.newss.link_image
     };
   
-    this.api.createData('news', data).subscribe(result=>{
-      this.news=result;
+    this.api.createDataS(data, 'news').subscribe(result=>{
+      this.newss=result;
       this.submitted = true;
     })
   }
@@ -55,14 +55,14 @@ export class AddNewsComponent implements OnInit {
 
   fileChange(event:any){
     if(event.target.files){
-      // this.news.link_image = event.target.files[0];
+      // this.newss.link_image = event.target.files[0];
       var reader = new FileReader()
        reader.readAsDataURL(event.target.files[0])
       reader.onload = (event:any) => {
-        this.news.link_image = event.target.result
+        this.newss.link_image = event.target.result
       }
       this.isImageSaved = true;
-      // reader.readAsDataURL(this.news.link_image);
+      // reader.readAsDataURL(this.newss.link_image);
     }
   }
 

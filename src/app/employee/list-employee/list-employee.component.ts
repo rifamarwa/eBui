@@ -13,6 +13,15 @@ import { UpdateEmployeeComponent } from '../update-employee/update-employee.comp
 export class ListEmployeeComponent implements OnInit {
 
   employee:any=[];
+  employees:any=[];
+
+  first_name='';
+  count = 0;
+  page = 1;
+  pageSize = 16;
+  pageSizes = [16, 20, 24];
+
+
   isImageNotNull:boolean=true;
   config = {
     id: 'custom',
@@ -36,7 +45,8 @@ export class ListEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getListEmployee();
+    //this.getListEmployee();
+    this.retrieveEmployee();
   }
 
   getListEmployee(){
@@ -49,15 +59,52 @@ export class ListEmployeeComponent implements OnInit {
     })
   }
 
+  getRequestParamsNews(searchFirstName:string, page:number, pageSize:number): any {
+    // tslint:disable-next-line:prefer-const
+    let params:any = {};
+
+    if (searchFirstName) {
+      params[`first_name`] = searchFirstName;
+    }
+
+    if (page) {
+      params[`page`] = page - 1;
+    }
+
+    if (pageSize) {
+      params[`size`] = pageSize;
+    }
+
+    return params;
+  }
+
+  retrieveEmployee(): void {
+    const params = this.getRequestParamsNews(this.first_name, this.config.currentPage, this.config.itemsPerPage);
+
+    this.api.getDataS(params, 'employee')
+      .subscribe(
+        response => {
+          const { employees, totalItems } = response;
+          this.employees = employees;
+          this.config.totalItems = totalItems;
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
   onPageDataChange(event:any){
     this.config.currentPage = event;
-    this.getListEmployee();
+   // this.getListEmployee();
+   this.retrieveEmployee();
   }
 
   onPageSizeChange(event:any):void{
     this.config.itemsPerPage = event.target.value;
     this.config.currentPage = 1;
-    this.getListEmployee();
+   // this.getListEmployee();
+   this.retrieveEmployee();
   }
 
   detailEmployee(id:number, idx:number){
@@ -75,15 +122,16 @@ export class ListEmployeeComponent implements OnInit {
     };
     let dialog = this.dialog.open(DetailEmployeeComponent, dialogConfig);
     dialog.afterClosed().subscribe(result=>{
-      console.log(this.employee);
+      console.log(this.employees);
     })
     
   }
 
   deleteTheEmployee(id:number, index:number){
-    this.api.deleteData('employee',id).subscribe(result=>{
-      this.employee.splice(index,1);
-      this.getListEmployee();
+    this.api.deleteDataS(id,'employee').subscribe(result=>{
+      this.employees.splice(index,1);
+      // this.getListEmployee();
+      this.retrieveEmployee();
     })
   }
 
@@ -101,7 +149,7 @@ export class ListEmployeeComponent implements OnInit {
     };
     let dialog = this.dialog.open(UpdateEmployeeComponent, dialogConfig);
     dialog.afterClosed().subscribe(result=>{
-      console.log(this.employee);
+      console.log(this.employees);
     })
   }
 }

@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class AddTwitterComponent implements OnInit {
 
-  tweet:any=[];
+  twitters:any=[];
   submitted = false;
   options: FormGroup;
   categories = new FormControl;
@@ -34,17 +34,17 @@ export class AddTwitterComponent implements OnInit {
   saveData():void{
 
     const data = {
-      id: this.tweet.id,
-      name: this.tweet.name,
+      id: this.twitters.id,
+      name: this.twitters.name,
       // profile_image:this.profile_image,
-      username: this.tweet.username,
-      date: this.tweet.date,
-      text:this.tweet.text,
-      image:this.tweet.image
+      username: this.twitters.username,
+      date: this.twitters.date,
+      text:this.twitters.text,
+      image:this.twitters.image
     };
   
-    this.api.createData('twitter', data).subscribe(result=>{
-      this.tweet=result;
+    this.api.createDataS(data, 'twitter').subscribe(result=>{
+      this.twitters=result;
       this.submitted = true;
     })
   }
@@ -56,27 +56,27 @@ export class AddTwitterComponent implements OnInit {
 
   fileTweetImageChange(event:any){
     if(event.target.files){
-      // this.tweet.link_image = event.target.files[0];
+      // this.twitters.link_image = event.target.files[0];
       var reader = new FileReader()
        reader.readAsDataURL(event.target.files[0])
       reader.onload = (event:any) => {
-        this.tweet.image= event.target.result
+        this.twitters.image= event.target.result
       }
       this.isImageSaved = true;
-      // reader.readAsDataURL(this.tweet.link_image);
+      // reader.readAsDataURL(this.twitters.link_image);
     }
   }
 
   filePhotoProfileChange(event:any){
     if(event.target.files){
-      // this.tweet.link_image = event.target.files[0];
+      // this.twitters.link_image = event.target.files[0];
       var reader = new FileReader()
        reader.readAsDataURL(event.target.files[0])
       reader.onload = (event:any) => {
-        this.tweet.profile_image= event.target.result
+        this.twitters.profile_image= event.target.result
       }
       this.isImageSaved = true;
-      // reader.readAsDataURL(this.tweet.link_image);
+      // reader.readAsDataURL(this.twitters.link_image);
     }
   }
 

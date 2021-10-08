@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/api.service';
 export class DetailNewsComponent implements OnInit {
 
   news:any=[];
+  newss:any=[];
   isImageSaved:boolean=false;
   constructor(
     public api:ApiService,
@@ -23,8 +24,8 @@ export class DetailNewsComponent implements OnInit {
 
   getSingleNews()
   {
-    this.api.getSingleData('news', this.data.id).subscribe(result =>{
-      this.news = result;
+    this.api.getSingleDataS('news', this.data.id).subscribe(result =>{
+      this.newss = result;
       console.log(result);
     })
   }

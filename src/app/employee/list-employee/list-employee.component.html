@@ -1,9 +1,18 @@
-<body>
+<body><br>
+  <div class="input-box">
+    <input type="text" class="form-control" placeholder="Search by first name" [(ngModel)]="first_name"/>
+      <div class="input-group-append">
+        <button type="button" (click)="retrieveEmployee()">
+          <img class = "search" src = "../../../assets/dashboard/search.svg">
+        </button>
+      </div>
+  </div>
     <p class="items-per-page">{{config.itemsPerPage}} results</p>
+  
     <div class="employee-card">
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" 
-            *ngFor="let employeeLoop of employee | paginate: config; let idx=index ">
+            *ngFor="let employeeLoop of employees | paginate: config; let idx=index ">
                 <mat-card class="mat-elevation-z4">
                     <div class="other-menu">
                         
@@ -47,7 +56,7 @@
             </div>
         </div>
       
-        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="onPageDataChange($event)">
             <div class="custom-pagination">
                 <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
                   <span *ngIf="!p.isFirstPage()" (click)="p.previous()">
@@ -66,5 +75,6 @@
               </div>
           
         </pagination-template>
+      
     </div>
 </body>

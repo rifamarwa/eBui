@@ -81,7 +81,7 @@
         <div class="list-news-card">
             <div fxLayout="row wrap" fxLayoutGap="16px grid">
                 <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="100%" 
-                    *ngFor="let caseNews of news | paginate: config; let idx=index ;">
+                    *ngFor="let caseNews of newss | paginate: config; let idx=index ;">
                     <mat-card class="mat-card-list-news">
                         <div class="other-menu">
                             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -121,25 +121,25 @@
                 </div>
             </div>
         </div>
-        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+        <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="onPageDataChange($event)">
             <div class="custom-pagination">
                 <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
-                  <span *ngIf="!p.isFirstPage()" (click)="p.previous()">
+                    <span *ngIf="!p.isFirstPage()" (click)="p.previous()">
                     < 
-                      </span> 
-                  </div> 
-                  <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                        </span> 
+                    </div> 
+                    <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
                         <span (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">{{ page.label }}</span>
-                      <div *ngIf="p.getCurrent() === page.value">
+                        <div *ngIf="p.getCurrent() === page.value">
                         <span>{{ page.label }}</span>
-                      </div>
-                  </div>
-                  <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                        </div>
+                    </div>
+                    <div class="pagination-next" [class.disabled]="p.isLastPage()">
                     <span *ngIf="!p.isLastPage()" (click)="p.next()"> > </span>
-                  </div>
-              </div>
-          
+                    </div>
+                </div>
         </pagination-template>
+       
     </div>
 </body>
 

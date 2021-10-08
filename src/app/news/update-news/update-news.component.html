@@ -1,4 +1,4 @@
-<body *ngFor="let caseNews of news">
+<body >
    <div class="content">
       <div mat-dialog-content style="max-height: 120vh;">
          <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
@@ -7,19 +7,19 @@
                   <mat-card-title>Update News</mat-card-title>
                   <div class="form-group">
                      <label for="judul">Title</label>
-                     <input type="text" [(ngModel)]="caseNews.title_news" class="form-control" id="judul" name="judul">
+                     <input type="text" [(ngModel)]="newss.title_news" class="form-control" id="judul" name="judul">
                   </div>
                   <div fxLayout="row wrap" fxLayoutGap="25px grid">
                      <div fxFlex="50%" fxFlex.xs="50%" fxFlex.sm="50%">
                         <div class="form-group">
                            <label for="media">Channel</label>
-                           <input type="text"  [(ngModel)]="caseNews.media_name" class="form-control" id="media" name="media">
+                           <input type="text"  [(ngModel)]="newss.media_name" class="form-control" id="media" name="media">
                         </div>
                      </div>
                      <div fxFlex="50%" fxFlex.xs="50%" fxFlex.sm="50%">
                         <div class="form-group">
                            <label for="tanggal">Date</label>
-                           <input type="date" [(ngModel)]="caseNews.date" class="form-control" id="tanggal" name="tanggal">
+                           <input type="date" [(ngModel)]="newss.date" class="form-control" id="tanggal" name="tanggal">
                         </div>
                      </div>
                   </div>
@@ -27,17 +27,17 @@
                      <div fxFlex="50%" fxFlex.xs="50%" fxFlex.sm="50%">
                         <div class="form-group">
                            <label for="konten">Content</label>
-                           <textarea rows="20" [(ngModel)]="caseNews.content_text" class="form-control" id="konten" name="konten"></textarea>
+                           <textarea rows="20" [(ngModel)]="newss.content_text" class="form-control" id="konten" name="konten"></textarea>
                         </div>
                      </div>
                      <div fxFlex="50%" fxFlex.xs="50%" fxFlex.sm="50%">
                         <div class="photo">
                            <label style="display: block;">Photo</label>
-                           <img src = "{{caseNews.link_image}}"><br>
+                           <img src = "{{newss.link_image}}"><br>
                         </div><br>
                         <div class="form-group">
                            <label for="gambar">Photo URL</label>
-                           <input type="text" [(ngModel)]="caseNews.link_image"class="form-control" id="gambar" name="gambar">
+                           <input type="text" [(ngModel)]="newss.link_image"class="form-control" id="gambar" name="gambar">
                         </div><br>
                      </div>
                   </div>
@@ -45,7 +45,7 @@
             </mat-card>
             <div class="button">
                <button  class="btn-back" mat-dialog-close>Back</button>
-               <button  class="btn-update" (click) = "updateNews(caseNews.id, caseNews)">Update</button>
+               <button  class="btn-update" (click) = "updateNews(newss.id, newss)">Update</button>
            </div>
          </div>
       </div>

@@ -11,6 +11,8 @@ export class UpdateEmployeeComponent implements OnInit {
 
   employee:any=[];
   employeeLoop:any=[];
+  employees:any=[];
+
   isImageSaved:boolean=false;
   constructor(
     public api:ApiService,
@@ -24,24 +26,24 @@ export class UpdateEmployeeComponent implements OnInit {
 
   getSingleEmployee()
   {
-    this.api.getSingleData('employee', this.data.id).subscribe(result =>{
-      this.employee = result;
+    this.api.getSingleDataS('employee', this.data.id).subscribe(result =>{
+      this.employees = result;
       console.log(result);
     })
   }
 
-  getAllEmployee(){
-    this.api.getData('employee').subscribe(result=>{
-      this.employee = result;
-    })
-  }
+  // getAllEmployee(){
+  //   this.api.getData('employee').subscribe(result=>{
+  //     this.employee = result;
+  //   })
+  // }
 
   updateEmployee(id:number, data:any){
-    this.api.updateData('employee', id, data).subscribe(result=>{
+    this.api.updateDataS('employee', id, data).subscribe(result=>{
       
       console.log(result);
       this.dialogRef.close(result);
-      this.employee = this.getAllEmployee();
+     // this.employee = this.getAllEmployee();
       this.reloadCurrentRoute();
     })
   }
@@ -52,7 +54,7 @@ export class UpdateEmployeeComponent implements OnInit {
       var reader = new FileReader()
       reader.readAsDataURL(event.target.files[0])
       reader.onload = (event:any) => {
-        this.employee.photo_profile = event.target.result
+        this.employees.photo_profile = event.target.result
       }
       this.isImageSaved = true;
       // reader.readAsDataURL(this.news.link_image);
