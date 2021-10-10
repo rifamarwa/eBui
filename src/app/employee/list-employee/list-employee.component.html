@@ -1,11 +1,13 @@
 <body><br>
   <div class="input-box">
-    <input type="text" class="form-control" placeholder="Search by first name" [(ngModel)]="first_name"/>
-      <div class="input-group-append">
-        <button type="button" (click)="retrieveEmployee()">
-          <img class = "search" src = "../../../assets/dashboard/search.svg">
-        </button>
-      </div>
+    <div class="input-boxx">
+      <input type="text" class="form-control" placeholder="Search by first name" [(ngModel)]="first_name"/>
+    </div>
+    <div class="tombol-search">
+      <button class="btn btn-outline-secondary" type="button" (click)="retrieveEmployee()">
+        <img class = "search" src = "../../../assets/dashboard/search.svg">
+      </button>
+    </div>
   </div>
     <p class="items-per-page">{{config.itemsPerPage}} results</p>
   

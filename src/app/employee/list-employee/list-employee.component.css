@@ -14,11 +14,19 @@ input{
     text-align: center;
 }
 
-.search{
+button{
+    display: inline-block;
     position: absolute;
-    right:300px;
-    top: 30px;
+    /* right:300px; */
+    top: 152px;
+    left:450px;
+    width:70px;
+    height: 39px;
+}
+
+.search{
     width:30px;
+    text-align: center;
 }
 
 .items-per-page{

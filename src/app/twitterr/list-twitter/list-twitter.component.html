@@ -1,4 +1,14 @@
 <body>
+  <div class="input-box">
+    <div class="input-boxx">
+      <input type="text" class="form-control" placeholder="Search by username" [(ngModel)]="username"/>
+    </div>
+    <div class="tombol-search">
+      <button class="btn btn-outline-secondary" type="button" (click)="retrieveTwitter()">
+        <img class = "search" src = "../../../assets/dashboard/search.svg">
+      </button>
+    </div>
+  </div>
     <div class="twitter-card">
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
             <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" 

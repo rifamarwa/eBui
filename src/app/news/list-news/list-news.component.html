@@ -78,6 +78,16 @@
     </div>
     <div class="list-news">
         <h3>List News</h3>
+        <div class="input-box">
+            <div class="input-boxx">
+              <input type="text" class="form-control" placeholder="Search by title news" [(ngModel)]="title_news"/>
+            </div>
+            <div class="tombol-search">
+              <button class="btn btn-outline-secondary" type="button" (click)="retrieveNews()">
+                <img class = "search" src = "../../../assets/dashboard/search.svg">
+              </button>
+            </div>
+          </div>
         <div class="list-news-card">
             <div fxLayout="row wrap" fxLayoutGap="16px grid">
                 <div fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="100%" 
