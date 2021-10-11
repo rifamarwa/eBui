@@ -52,9 +52,13 @@ export class ApiService {
       return this.http.get(`${this.url2+baseUrl}/${id}`);
     }
 
-    getDataDescending(params:any, baseUrl:any): Observable<any>{
-      return this.http.get(this.url2+baseUrl, { params });
-    }
+    // getDataDescending(params:any, baseUrl:any): Observable<any>{
+    //   return this.http.get(this.url2+baseUrl, { params });
+    // }
+
+    // getDataSorting(params:any, baseUrl:any): Observable<any>{
+    //   return this.http.get(this.url2+baseUrl, { params });
+    // }
   
     createDataS(data:any,baseUrl:any): Observable<any> {
       return this.http.post(this.url2+baseUrl, data);

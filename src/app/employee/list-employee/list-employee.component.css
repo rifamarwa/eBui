@@ -14,7 +14,7 @@ input{
     text-align: center;
 }
 
-button{
+.btn{
     display: inline-block;
     position: absolute;
     /* right:300px; */
