@@ -74,13 +74,28 @@ export class ListTwitterComponent implements OnInit {
     return params;
   }
 
+  // getRequestParamsTwitter(page:number, pageSize:number): any {
+  //   // tslint:disable-next-line:prefer-const
+  //   let params:any = {};
+
+  //   if (page) {
+  //     params[`page`] = page - 1;
+  //   }
+
+  //   if (pageSize) {
+  //     params[`size`] = pageSize;
+  //   }
+
+  //   return params;
+  // }
+
   retrieveTwitter(): void {
     const params = this.getRequestParamsTwitter(this.username, this.config.currentPage, this.config.itemsPerPage);
 
     this.api.getDataS(params, 'twitter')
       .subscribe(
         response => {
-          const { twitters, totalItems } = response;
+          const {totalItems, twitters} = response;
           this.twitters = twitters;
           this.config.totalItems = totalItems;
           console.log(response);
@@ -89,6 +104,27 @@ export class ListTwitterComponent implements OnInit {
           console.log(error);
         });
   }
+
+  // retrieveTwitter(): void {
+  //  // const params = this.getRequestParamsTwitter(this.config.currentPage, this.config.itemsPerPage);
+
+  //   const page = this.config.currentPage;
+  //   const limit = this.config.itemsPerPage;
+
+  //   this.api.getDataDescending(page, limit, 'twitter')
+  //     .subscribe(
+  //       response => {
+  //         const {twitters} = response;
+  //         this.twitters = twitters;
+  //         // this.page = page;
+  //         // this.pageSize = limit;
+  //        // this.config.totalItems = totalItems;
+  //         console.log(response);
+  //       },
+  //       error => {
+  //         console.log(error);
+  //       });
+  // }
 
   onPageDataChange(event:any){
     this.config.currentPage = event;

@@ -9,8 +9,10 @@ export class ApiService {
 
     //base api url
     public url = 'http://192.168.29.91:5002/api/v1/';
-     public url2 = 'http://192.168.29.91:5006/api/v2/'
-    //public url2 = 'http://localhost:5000/api/v2/'
+     public url2 = 'http://192.168.29.91:5010/api/v2/'
+
+  
+    //public url2 = 'http://localhost:5000/api/v1/'
 
     constructor(public http:HttpClient) { }
   
@@ -44,17 +46,21 @@ export class ApiService {
     }
 
     /**************SERVICE MENGGUNAKAN SEQUELIZE****************/
+    // getDataS(params:any, baseUrl:any): Observable<any> {
+    //   return this.http.get(this.url2+baseUrl+'/pagination', { params });
+    // }
+
     getDataS(params:any, baseUrl:any): Observable<any> {
-      return this.http.get(this.url2+baseUrl, { params });
+      return this.http.get(this.url2+baseUrl,{params});
     }
   
     getSingleDataS(baseUrl:any, id:number): Observable<any> {
       return this.http.get(`${this.url2+baseUrl}/${id}`);
     }
 
-    // getDataDescending(params:any, baseUrl:any): Observable<any>{
-    //   return this.http.get(this.url2+baseUrl, { params });
-    // }
+    getDataDescending(page:number, limit:number, baseUrl:any): Observable<any>{
+      return this.http.get(`${this.url2+baseUrl+'/pagination'}?page=${page}&limit=${limit}`);
+    }
 
     // getDataSorting(params:any, baseUrl:any): Observable<any>{
     //   return this.http.get(this.url2+baseUrl, { params });
